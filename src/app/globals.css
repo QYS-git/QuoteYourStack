@@ -1,0 +1,210 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CSS VARIABLES — DESIGN TOKENS
+============================================================ */
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-dm-sans:  'DM Sans', system-ui, sans-serif;
+
+  /* ── Formal Premium Colour Palette ── */
+  --color-bg-primary: #0A0A0F;
+  --color-bg-surface: #12121A;
+  --color-bg-card:    #1A1A26;
+  --color-gold:       #C9A96E;
+  --color-gold-light: #E8C98A;
+  --color-ivory:      #F5F0E8;
+  --color-muted:      #8A8A9A;
+  --color-faint:      #4A4A5A;
+  --color-border:     rgba(201,169,110,0.15);
+  --color-border-sub: rgba(255,255,255,0.06);
+
+  --ease-smooth:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================================
+   BASE RESETS
+============================================================ */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-ivory);
+  font-family: var(--font-dm-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── Restore cursor on touch devices ── */
+@media (hover: none) {
+  body, a, button { cursor: auto; }
+}
+
+/* ============================================================
+   SELECTION STYLE
+============================================================ */
+::selection {
+  background: rgba(201,169,110,0.25);
+  color: var(--color-ivory);
+}
+
+/* ============================================================
+   SCROLLBAR STYLING
+============================================================ */
+::-webkit-scrollbar        { width: 5px; }
+::-webkit-scrollbar-track  { background: var(--color-bg-primary); }
+::-webkit-scrollbar-thumb  { background: var(--color-gold); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold-light); }
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+============================================================ */
+.font-display { font-family: var(--font-playfair), Georgia, serif; }
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #C9A96E 0%, #F0D9A0 50%, #C9A96E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   SECTION REVEAL — INTERSECTION OBSERVER HOOK
+   Add class `reveal` to elements, they animate in when visible
+============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================================
+   NOISE TEXTURE OVERLAY — gives depth to flat backgrounds
+============================================================ */
+.noise-overlay::after {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: 9999;
+}
+
+/* ============================================================
+   GOLD SHIMMER LINE — decorative horizontal rule
+============================================================ */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-gold) 50%, transparent 100%);
+  opacity: 0.4;
+}
+
+/* ============================================================
+   GLOW BUTTON STYLE
+============================================================ */
+.btn-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-dm-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--ease-smooth);
+  overflow: hidden;
+}
+.btn-gold::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--color-gold);
+  transform: translateX(-100%);
+  transition: transform 0.3s var(--ease-smooth);
+  z-index: 0;
+}
+.btn-gold:hover::before { transform: translateX(0); }
+.btn-gold:hover         { color: var(--color-bg-primary); }
+.btn-gold > *           { position: relative; z-index: 1; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  background: transparent;
+  color: var(--color-muted);
+  font-family: var(--font-dm-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+.btn-ghost:hover { color: var(--color-ivory); }
+
+/* ============================================================
+   CARD HOVER EFFECT
+============================================================ */
+.card-hover {
+  transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+  border: 1px solid var(--color-border-sub);
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 64px rgba(0,0,0,0.4), 0 0 0 1px var(--color-border);
+}
+
+/* ============================================================
+   ANIMATED UNDERLINE LINK
+============================================================ */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--color-gold);
+  transition: width 0.3s var(--ease-smooth);
+}
+.link-underline:hover::after { width: 100%; }
+
+/* ============================================================
+   PAGE TRANSITION WRAPPER
+============================================================ */
+.page-enter {
+  animation: pageEnter 0.6s var(--ease-smooth) forwards;
+}
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   HERO GRADIENT GLOW
+============================================================ */
+.hero-glow {
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,0.1) 0%, transparent 70%);
+}
