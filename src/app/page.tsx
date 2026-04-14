@@ -23,22 +23,22 @@ export const metadata: Metadata = generatePageMetadata({
 const services = [
   {
     icon:        <Globe size={28} />,
-    title:       'Brand Strategy',
+    title:       'Industrial IoT',
     description: 'We decode your market position and build identities that command premium perception across every touchpoint.',
   },
   {
     icon:        <Layers size={28} />,
-    title:       'UI/UX Design',
+    title:       'Custom Tools and Workflows',
     description: 'Interfaces that feel inevitable — where every interaction is deliberate, delightful, and conversion-optimised.',
   },
   {
     icon:        <Zap size={28} />,
-    title:       'Web Development',
+    title:       'SEO & GEO Powered Visibilility ',
     description: 'Next.js-powered sites built for speed, SEO, and scale. Lighthouse scores that consistently hit 95+.',
   },
   {
     icon:        <Sparkles size={28} />,
-    title:       'Motion Design',
+    title:       'Branding and Marketing',
     description: 'Animation and motion that breathes life into your brand — from micro-interactions to full brand films.',
   },
 ];
@@ -53,23 +53,23 @@ const stats = [
 const featuredWorks = [
   {
     slug:       'archetype-rebrand',
-    title:      'Archetype',
-    category:   'Brand Identity',
-    year:       '2025',
+    title:      'Fleet Management',
+    category:   'Industrial IoT',
+    year:       '2026',
     color:      'from-amber-900/30',
   },
   {
     slug:       'nova-digital-platform',
-    title:      'Nova Platform',
-    category:   'UI/UX + Dev',
-    year:       '2024',
+    title:      'Fan Search Tool',
+    category:   'Web and Mobile Apps',
+    year:       '2026',
     color:      'from-slate-800/50',
   },
   {
     slug:       'meridian-identity',
-    title:      'Meridian',
-    category:   'Brand + Motion',
-    year:       '2024',
+    title:      'Data Collection Tool',
+    category:   'Web and Mobile Apps',
+    year:       '2025',
     color:      'from-zinc-800/50',
   },
 ];
@@ -115,7 +115,7 @@ export default function HomePage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(201,169,110,0.2)] bg-[rgba(201,169,110,0.05)] mb-8 animate-fade-in">
             <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" aria-hidden />
             <span className="text-gold text-xs font-medium tracking-[0.2em] uppercase">
-              Premium Creative Agency
+              Tech & Growth Partner
             </span>
           </div>
 
@@ -125,10 +125,10 @@ export default function HomePage() {
             className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight mb-8 animate-fade-up"
             style={{ animationDelay: '0.1s', animationFillMode: 'both' }}
           >
-            We Build Brands
+           Turn Industrial Business Into
             <br />
             <em className="text-gradient-gold not-italic">
-              That Illuminate
+              Tech First Companies
             </em>
           </h1>
 
@@ -136,7 +136,7 @@ export default function HomePage() {
             className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-up"
             style={{ animationDelay: '0.25s', animationFillMode: 'both' }}
           >
-            Strategy-led creative studio crafting identities, experiences, and digital products for ambitious companies ready to stand apart.
+            From IoT platforms to SEO, we help automotive, HVAC, and industrial SMEs adopt the technology that actually moves the needle.
           </p>
 
           <div
@@ -340,9 +340,9 @@ export default function HomePage() {
         <ScrollReveal delay={0.15}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
-              { icon: <Mail size={18} />,    label: 'Email Us',       value: 'hello@luminarystudio.com' },
-              { icon: <Phone size={18} />,   label: 'Call Us',        value: '+1 (555) 000-0000' },
-              { icon: <MapPin size={18} />,  label: 'Our Studio',     value: 'New York, NY' },
+              { icon: <Mail size={18} />,    label: 'Email Us',       value: 'info@quoteyourstack.com' },
+              { icon: <Phone size={18} />,   label: 'Call Us',        value: '+91 75-360-630-11' },
+              { icon: <MapPin size={18} />,  label: 'Our Space',     value: 'Delhi, India' },
             ].map(({ icon, label, value }) => (
               <div
                 key={label}

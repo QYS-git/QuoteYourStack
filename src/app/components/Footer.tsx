@@ -38,11 +38,11 @@ export default function Footer() {
                 </svg>
               </span>
               <span className="font-display text-lg font-semibold text-ivory">
-                Luminary<span className="text-gold"> Studio</span>
+                QuoteYour<span className="text-gold">Stack</span>
               </span>
             </Link>
             <p className="text-muted text-sm leading-relaxed max-w-xs">
-              We craft brands, experiences, and digital products that illuminate. Premium creative work for ambitious companies.
+              QuoteYourIdea is a tech & digital growth partner for industrial SMEs in India. We build tools that make your operations smarter and your brand easier to find.
             </p>
             {/* ── Socials — anchor text is SEO signal ── */}
             <div className="flex items-center gap-4 mt-8">

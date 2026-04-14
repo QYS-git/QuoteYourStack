@@ -57,8 +57,8 @@ export default function Navbar() {
             </svg>
           </span>
           <span className="font-display text-xl font-semibold tracking-wide text-ivory">
-            Luminary
-            <span className="text-gold"> Studio</span>
+            QuoteYour
+            <span className="text-gold">Stack</span>
           </span>
         </Link>
 

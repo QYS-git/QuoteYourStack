@@ -19,21 +19,21 @@ export const metadata: Metadata = generatePageMetadata({
 const works = [
   {
     slug:        'archetype-rebrand',
-    title:       'Archetype Rebrand',
-    category:    'Brand Identity',
-    year:        '2025',
+    title:       'Fleet Management',
+    category:    'Industrial IoT',
+    year:        '2026',
     description: 'Complete brand overhaul for a Fortune 500 technology company — identity, system, and rollout.',
-    tags:        ['Brand Strategy', 'Identity', 'Guidelines'],
+    tags:        ['IoT', 'Real time visualisation', 'Predictive Maintainence'],
     featured:    true,
     color:       'from-amber-900/20',
   },
   {
     slug:        'nova-digital-platform',
-    title:       'Nova Platform',
-    category:    'UI/UX + Development',
-    year:        '2024',
+    title:       'Fan Seach Tool',
+    category:    'WebApps',
+    year:        '2026',
     description: 'End-to-end design and development of a SaaS analytics dashboard handling 2M+ users.',
-    tags:        ['UI/UX', 'Next.js', 'Design System'],
+    tags:        ['Automation','Web & Mobile App'],
     featured:    true,
     color:       'from-blue-900/20',
   },
@@ -89,15 +89,15 @@ export default function OurWorksPage() {
       >
         <ScrollReveal>
           <p className="text-gold text-xs font-medium tracking-[0.25em] uppercase mb-6">
-            Selected Work
+            Real problems. Engineered solutions.
           </p>
           {/* H1: SEO-critical, describes the page clearly */}
           <h1
             id="works-page-heading"
             className="font-display text-5xl md:text-7xl font-bold text-ivory leading-tight max-w-2xl"
           >
-            Work That{' '}
-            <em className="text-gradient-gold not-italic">Speaks</em>
+            Built for industries that run on{' '}
+            <em className="text-gradient-gold not-italic">legacy and instinct</em>
           </h1>
           <p className="text-muted text-lg mt-6 max-w-xl leading-relaxed">
             A curated selection of brand, design, and digital projects — each one a story of ambition, craft, and measurable impact.
